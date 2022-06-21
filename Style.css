@@ -46,9 +46,21 @@ button {
     box-shadow: 1px 5px 10px #3d3d3d;
 }
 
-button {
+#submit {
     background: transparent;
-    border-radius: 25px;
-    box-sizing: border-box;
-    box-shadow: 1px 5px 10px #3d3d3d;
+    width:fit-content;
+    border: transparent;
+}
+
+#animeList {
+    width: 40%;
+    display: inline-block;
+}
+
+.extraContent {
+    position: fixed;
+    height: 300px;
+    width: 50%;
+    overflow: auto;
+    display: inline-block;
 }
