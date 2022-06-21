@@ -41,6 +41,18 @@ function getAnimeHandler(e) {
             document.getElementById('animeList').appendChild(newAnime);
 
             const btn = document.getElementById(`${anime.mal_id}btn`)
+
+                        //adding buttons for more info
+                        btn.addEventListener('click', function () {
+                            if (btn.textContent == 'More Info') {
+                                document.getElementById(`${anime.mal_id}`).hidden = false;
+                                document.getElementById(`${anime.mal_id}btn`).textContent = 'Hide Info';
+                            }
+                            else if(btn.textContent == 'Hide Info') {
+                                document.getElementById(`${anime.mal_id}`).hidden = true;
+                                document.getElementById(`${anime.mal_id}btn`).textContent = 'More Info';
+                            }
+                        })
         }
     }).catch((error) => {
         alert('No anime found')
