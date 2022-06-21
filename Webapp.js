@@ -53,6 +53,10 @@ function getAnimeHandler(e) {
                                 document.getElementById(`${anime.mal_id}btn`).textContent = 'More Info';
                             }
                         })
+                        
+                        const animeImg = document.getElementById(`${anime.mal_id}img`)
+
+
         }
     }).catch((error) => {
         alert('No anime found')
