@@ -15,3 +15,26 @@ h1 {
     margin: 0px;
     background-color: rgb(85, 85, 85);
 }
+
+#form {
+    width: 100%;
+    max-width: 700px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding: 10px 20px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#animeSearch {
+    flex: 1;
+    background: transparent;
+    outline: transparent;
+    padding: 12px 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+    box-shadow: 1px 5px 10px #1f1f1f;
+    border-radius: 25px;
+}
