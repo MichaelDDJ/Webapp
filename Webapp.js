@@ -67,3 +67,8 @@ function getAnimeHandler(e) {
         alert('No anime found')
     })  
 }
+
+
+//handler for delete button
+const deleteBtn = document.getElementById('delete')
+deleteBtn.addEventListener('click', clearSearchHandler)
