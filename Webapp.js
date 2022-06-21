@@ -72,3 +72,13 @@ function getAnimeHandler(e) {
 //handler for delete button
 const deleteBtn = document.getElementById('delete')
 deleteBtn.addEventListener('click', clearSearchHandler)
+
+function clearSearchHandler(e) {
+    let animeToClear = document.querySelectorAll('.anime')
+    for(let anime of animeToClear) {
+        anime.remove();
+    }
+    document.getElementById('mouseOverContent').textContent = '';
+    document.getElementById('mouseOverContentTitle').textContent = '';
+    document.getElementById('results').textContent = '';
+}
