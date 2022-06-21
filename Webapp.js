@@ -19,6 +19,29 @@ function getAnimeHandler(e) {
         })
         document.getElementById('results').textContent = `${total} results!`
 
+        for(let anime of animes){
+
+            if(anime.year == null) {
+                anime.year = 'N/A';
+            }
+
+            //builds animeList section
+            let newAnime = document.createElement('div');
+            newAnime.className = 'anime';
+            newAnime.innerHTML = `
+            <img id='${anime.mal_id}img' src=${anime.images.webp.image_url}>
+            <div class='animeContent'>
+                <span style="font-weight:bold">${anime.title} </span><button id='${anime.mal_id}btn'>More Info</button>
+                <br>
+                <br>
+            </div>
+            <div class='mouseClickContent'>
+                <span id=${anime.mal_id} hidden>Episodes: ${anime.episodes}, Since: ${anime.year}</span>
+            </div>`
+            document.getElementById('animeList').appendChild(newAnime);
+
+            const btn = document.getElementById(`${anime.mal_id}btn`)
+        }
     }).catch((error) => {
         alert('No anime found')
     })  
