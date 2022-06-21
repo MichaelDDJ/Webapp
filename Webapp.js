@@ -42,27 +42,26 @@ function getAnimeHandler(e) {
 
             const btn = document.getElementById(`${anime.mal_id}btn`)
 
-                        //adding buttons for more info
-                        btn.addEventListener('click', function () {
-                            if (btn.textContent == 'More Info') {
-                                document.getElementById(`${anime.mal_id}`).hidden = false;
-                                document.getElementById(`${anime.mal_id}btn`).textContent = 'Hide Info';
-                            }
-                            else if(btn.textContent == 'Hide Info') {
-                                document.getElementById(`${anime.mal_id}`).hidden = true;
-                                document.getElementById(`${anime.mal_id}btn`).textContent = 'More Info';
-                            }
-                        })
+            //adding buttons for more info
+            btn.addEventListener('click', function () {
+                if (btn.textContent == 'More Info') {
+                    document.getElementById(`${anime.mal_id}`).hidden = false;
+                    document.getElementById(`${anime.mal_id}btn`).textContent = 'Hide Info';
+                }
+                else if(btn.textContent == 'Hide Info') {
+                    document.getElementById(`${anime.mal_id}`).hidden = true;
+                    document.getElementById(`${anime.mal_id}btn`).textContent = 'More Info';
+                }
+            })
 
-                        const animeImg = document.getElementById(`${anime.mal_id}img`)
-                                    //adding anime synopsis
+            const animeImg = document.getElementById(`${anime.mal_id}img`)
+
+            //adding anime synopsis
             animeImg.addEventListener('mouseover', function () {
 
                 document.getElementById('mouseOverContentTitle').textContent = `${anime.title}`;
                 document.getElementById('mouseOverContent').textContent = `${anime.synopsis}`;
             })
-
-
         }
     }).catch((error) => {
         alert('No anime found')
