@@ -12,6 +12,13 @@ function getAnimeHandler(e) {
     .then(function (data) {
         const animes = data.data;
 
+        //get number of search results and displays
+        let total = 0;
+        animes.forEach(() => {
+            total++;
+        })
+        document.getElementById('results').textContent = `${total} results!`
+
     }).catch((error) => {
         alert('No anime found')
     })  
