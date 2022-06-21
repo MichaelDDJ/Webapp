@@ -21,6 +21,7 @@ function getAnimeHandler(e) {
 
         for(let anime of animes){
 
+            //some anime are not returning a year. changes null value to 'N/A'
             if(anime.year == null) {
                 anime.year = 'N/A';
             }
@@ -28,6 +29,7 @@ function getAnimeHandler(e) {
             //builds animeList section
             let newAnime = document.createElement('div');
             newAnime.className = 'anime';
+            //writes the html for each anime returned
             newAnime.innerHTML = `
             <img id='${anime.mal_id}img' src=${anime.images.webp.image_url}>
             <div class='animeContent'>
@@ -38,8 +40,10 @@ function getAnimeHandler(e) {
             <div class='mouseClickContent'>
                 <span id=${anime.mal_id} hidden>Episodes: ${anime.episodes}, Since: ${anime.year}</span>
             </div>`
+            //add each anime to a list
             document.getElementById('animeList').appendChild(newAnime);
 
+            //grabs all buttons under anime to turn to more info buttons
             const btn = document.getElementById(`${anime.mal_id}btn`)
 
             //adding buttons for more info
@@ -65,6 +69,7 @@ function getAnimeHandler(e) {
         }
     }).catch((error) => {
         alert('No anime found')
+        //in case of bug
     })  
 }
 
