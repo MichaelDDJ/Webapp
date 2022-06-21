@@ -53,8 +53,14 @@ function getAnimeHandler(e) {
                                 document.getElementById(`${anime.mal_id}btn`).textContent = 'More Info';
                             }
                         })
-                        
+
                         const animeImg = document.getElementById(`${anime.mal_id}img`)
+                                    //adding anime synopsis
+            animeImg.addEventListener('mouseover', function () {
+
+                document.getElementById('mouseOverContentTitle').textContent = `${anime.title}`;
+                document.getElementById('mouseOverContent').textContent = `${anime.synopsis}`;
+            })
 
 
         }
